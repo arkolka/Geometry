@@ -42,5 +42,16 @@ namespace Geometry.Tests
             var triangle = new Triangle(3, 4, 5);
             Assert.AreEqual(6, triangle.GetArea());
         }
+
+        [TestMethod]
+        public void GetAreaForArrayOfShapes()
+        {
+            var shapesArray = new Shape[2];
+            shapesArray[0] = new Triangle(3, 4, 5);
+            shapesArray[1] = new Circle(5);
+
+            Assert.AreEqual(6, shapesArray[0].GetArea());
+            Assert.AreEqual(Math.PI * 25 / 2, shapesArray[1].GetArea());
+        }
     }
 }
